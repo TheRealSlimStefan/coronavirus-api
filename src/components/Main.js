@@ -84,7 +84,7 @@ class Main extends Component {
         options={{
           title: {
             display: true,
-            text: "Global Data",
+            text: `${this.props.data.Country}`,
             padding: 20,
             fontStyle: "normal",
             fontSize: 20,

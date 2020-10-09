@@ -8,8 +8,7 @@ import "../styles/App.css";
 class App extends Component {
   state = {
     data: {
-      Global: {},
-      Countries: [],
+      isLoaded: false,
     },
   };
 
@@ -20,6 +19,7 @@ class App extends Component {
         console.log(data);
         this.setState({
           data,
+          isLoaded: true,
         });
       });
   };
@@ -29,39 +29,43 @@ class App extends Component {
   }
 
   render() {
-    const { data } = this.state;
+    const { data, isLoaded } = this.state;
 
     return (
       <Router>
         <div className="app">
           <Header />
           <Navigation />
-          <Switch>
-            <Route
-              path="/"
-              exact
-              component={() => (
-                <main>
-                  <h1>Select an option...</h1>
-                </main>
-              )}
-            />
-            <Route
-              path="/global"
-              component={() => <Main data={data.Global} type="global" />}
-            />
-            <Route
-              path="/location"
-              component={() => <Main data={data.Countries} type="location" />}
-            />
-            <Route
-              component={() => (
-                <main>
-                  <h1>This page doesn't exist</h1>
-                </main>
-              )}
-            />
-          </Switch>
+          {isLoaded ? (
+            <Switch>
+              <Route
+                path="/"
+                exact
+                component={() => (
+                  <main>
+                    <h1>Select an option...</h1>
+                  </main>
+                )}
+              />
+              <Route
+                path="/global"
+                component={() => <Main data={data.Global} type="global" />}
+              />
+              <Route
+                path="/location"
+                component={() => (
+                  <Main data={data.Countries[0]} type="location" />
+                )}
+              />
+              <Route
+                component={() => (
+                  <main>
+                    <h1>This page doesn't exist</h1>
+                  </main>
+                )}
+              />
+            </Switch>
+          ) : null}
         </div>
       </Router>
     );
