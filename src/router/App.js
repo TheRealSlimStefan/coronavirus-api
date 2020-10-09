@@ -7,20 +7,19 @@ import "../styles/App.css";
 
 class App extends Component {
   state = {
-    data: {},
+    data: {
+      Global: {},
+      Countries: [],
+    },
   };
 
   fetchData = () => {
-    // fetch("https://api.covid19api.com/total/dayone/country/south-africa")
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data));
-
     fetch("https://api.covid19api.com/summary")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         this.setState({
-          data: data.Global,
+          data,
         });
       });
   };
@@ -49,11 +48,11 @@ class App extends Component {
             />
             <Route
               path="/global"
-              component={() => <Main data={data} type="global" />}
+              component={() => <Main data={data.Global} type="global" />}
             />
             <Route
               path="/location"
-              component={() => <Main data={data} type="location" />}
+              component={() => <Main data={data.Countries} type="location" />}
             />
             <Route
               component={() => (

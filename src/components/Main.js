@@ -4,7 +4,9 @@ import { Bar } from "react-chartjs-2";
 import "../styles/Main.css";
 
 class Main extends Component {
-  state = {};
+  state = {
+    data: this.props.data,
+  };
 
   global = (
     <main>
