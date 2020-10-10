@@ -16,7 +16,6 @@ class App extends Component {
     fetch("https://api.covid19api.com/summary")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           data,
           isLoaded: true,
@@ -49,12 +48,12 @@ class App extends Component {
               />
               <Route
                 path="/global"
-                component={() => <Main data={data.Global} type="global" />}
+                component={() => <Main data={data} type="global" />}
               />
               <Route
                 path="/location"
                 component={() => (
-                  <Main data={data.Countries[0]} type="location" />
+                  <Main data={data} type="location" />
                 )}
               />
               <Route

@@ -1,7 +1,8 @@
 import React from "react";
+import "../styles/Option.css";
 
-const Option = () => {
-  return <option>opcja1</option>;
+const Option = (props) => {
+return <option onClick={props.click}>{props.country.Country}</option>;
 };
 
 export default Option;

@@ -8,6 +8,7 @@ main {
 
 main h1 {
     align-self: center;
+    text-align: center;
 }
 
 main select {
@@ -15,6 +16,6 @@ main select {
     font-size: 18px;
     padding: 5px;
     align-self: flex-start;
-    flex-basis: 50%;
+    width: 80%;
     margin-bottom: 10px;
 }
