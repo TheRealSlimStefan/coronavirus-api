@@ -20,7 +20,7 @@ class Main extends Component {
     },
     isLoaded: false,
   };
-
+  
   createMain = (data) => {
     if(this.props.type === "global"){
       return (
@@ -62,6 +62,16 @@ class Main extends Component {
               legend: {
                 display: false,
               },
+              scales: {
+                yAxes: [{
+                    ticks: {
+                        callback: function(value, index, values) {
+                          if(value >= 1000 && value < 100000) return (value / 1000) + "K";
+                          else if(value >= 1000000) return (value / 1000000) + "M";
+                        }
+                    }
+                }]
+              }
             }}
           />
         </main>
@@ -107,6 +117,16 @@ class Main extends Component {
               legend: {
                 display: false,
               },
+              scales: {
+                yAxes: [{
+                    ticks: {
+                        callback: function(value, index, values) {
+                          if(value >= 1000 && value < 100000) return (value / 1000) + "K";
+                          else if(value >= 1000000) return (value / 1000000) + "M";
+                        }
+                    }
+                }]
+              }
             }}
           />
         </main>
