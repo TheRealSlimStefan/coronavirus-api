@@ -31,7 +31,7 @@ class App extends Component {
     const { data, isLoaded } = this.state;
 
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="app">
           <Header />
           <Navigation />

@@ -15,13 +15,19 @@ class Select extends Component {
     })  
   }
 
+  handleOnMouseDown = () => {
+    if(this.state.size === 1) this.setState({
+      size: 4,
+    }); 
+  }
+
   render(){
     const {size} = this.state; 
     
     const options = this.props.countries.map(country => <Option key={country.CountryCode} country={country} clik={this.handleClick}/>)
 
     return (
-      <select onClick={this.handleClick} onChange={this.props.handleChange} size={size}>
+      <select onMouseDown={this.handleOnMouseDown} onClick={this.handleClick} onChange={this.props.handleChange} size={size}>
         {options}
       </select>
     );
