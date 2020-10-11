@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Header from "../components/Header";
 import Navigation from "../components/Navigation";
 import Main from "../components/Main";
@@ -31,7 +31,7 @@ class App extends Component {
     const { data, isLoaded } = this.state;
 
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={'/'}>
         <div className="app">
           <Header />
           <Navigation />
@@ -66,7 +66,7 @@ class App extends Component {
             </Switch>
           ) : null}
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }

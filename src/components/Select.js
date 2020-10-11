@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Option from "./Option";
 import "../styles/Select.css";
+import { RiBarChartGroupedFill } from "react-icons/ri";
 
 class Select extends Component {
   state = {
@@ -9,15 +10,15 @@ class Select extends Component {
 
   handleClick = () => {
     if(this.state.size === 1) this.setState({
-      size: 4,
+      active: 4,
     }); else this.setState({
-      size: 1,
+      active: 1,
     })  
   }
 
   handleOnMouseDown = () => {
     if(this.state.size === 1) this.setState({
-      size: 4,
+      active: 4,
     }); 
   }
 
@@ -27,9 +28,9 @@ class Select extends Component {
     const options = this.props.countries.map(country => <Option key={country.CountryCode} country={country} clik={this.handleClick}/>)
 
     return (
-      <select onMouseDown={this.handleOnMouseDown} onClick={this.handleClick} onChange={this.props.handleChange} size={size}>
-        {options}
-      </select>
+        <select onMouseDown={this.handleOnMouseDown} onClick={this.handleClick} onChange={this.props.handleChange} size={size}>
+          {options}
+        </select>
     );
   }
   
