@@ -2,7 +2,7 @@
 
 ## 1. Description
 
-This app uses Coronavirus API which allows for getting as JSON data from the database and use it in-app. An app which gives for the user a possibility to check how much-confirmed cases, recovered cases and death cases are until the start of the pandemic. User can check global data which concern all countries and the user can check local data which displays after selecting a country.
+This app uses Coronavirus API which allows for getting as JSON data from the database and use it in-app. An app which gives for the user a possibility to check how much-confirmed cases, recovered cases and death cases are until the start of the pandemic. User can check global data which concern all countries and the user can check local data which displays after selecting a country. This app uses chart.js which displays nicely to eye charts of confirmed, recovered and death cases.
 
 ## 2. How to install?
 
